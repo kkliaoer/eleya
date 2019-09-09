@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="src/css/dingdan.css" />
+		<script src="src/js/loadDingdan.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/tool.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 顶部导航栏 -->
+		<div class="nav_top">
+			<img src="src/img/index.jpg">
+
+			<div class="daohang">
+				<ul>
+					<li><a href="../../index.html">首页</a></li>
+					<li><a href="dingdan.html">订单</a></li>
+					<li><a href="../my/my.html">我的</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<!-- 左侧导航栏 -->
+		<div class="nav_left">
+			<ul>
+				<h5 class="dao1">个人中心</h5>
+				<h5 class="dao1">我的订单</h5>
+				<li class="dao2"><a href="#" class="last3months">近三个月订单</a></li>
+				<h5 class="dao1">我的资产</h5>
+				<li class="dao2"><a href="#">我的红包</a></li>
+				<li class="dao2"><a href="#">账户余额</a></li>
+				<li class="dao2"><a href="#">我的金币</a></li>
+				<h5 class="dao1">我的资料</h5>
+				<li class="dao2"><a href="#">个人资料</a></li>
+				<li class="dao2"><a href="#">地址管理</a></li>
+				<h5 class="dao1">我的收藏</h5>
+			</ul>
+		</div>
+		<!-- 右侧内容区域 -->
+		<div class="cont_right">
+			<div class="dingdan_nav">
+				<ul>
+					<li class="xiadan">下单时间</li>
+					<li class="neirong">订单内容</li>
+					<li class="money">订单金额</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var url = "loadDingdan";
+		$.get(url, function(data) {
+			loadDingdan(data[1]);
+			console.log(data[1])
+		})
+	</script>
+</html>

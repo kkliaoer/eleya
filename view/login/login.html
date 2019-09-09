@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="src/css/login.css"/>
+		<script src="http://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- <h1>登录页面</h1> -->
+		
+		<!-- 顶部导航栏 -->
+		<div class="nav_top">
+			<img src="src/img/index.jpg">
+		
+			<div class="daohang">
+				<ul>
+					<li><a href="../../index.html">首页</a></li>
+					<li><a href="../dingdan/dingdan.html">订单</a></li>
+					<li><a href="../my/my.html">我的</a></li>
+					<li><a href="login.html">登录/注册</a></li>
+				</ul>
+			</div>
+		</div>
+		
+		<!-- 登录区域 -->
+		<div class="login_page">
+			<div class="login_img">
+				<img src="src/img/index.jpg" >
+			</div>
+			<div class="login_input">
+				<input type="text" placeholder="  手机号" name="userid" id="userid" value="" />
+				<input type="password"  placeholder="  密码" name="password" id="password" value=""/>
+				<p>新用户登录即自动注册，并表示已同意<a href="https://h5.ele.me/service/agreement/?spm=a2ogi.12119171.0.0#initTitle=%E7%94%A8%E6%88%B7%E6%9C%8D%E5%8A%A1%E5%8D%8F%E8%AE%AE&key=ruleQue18">《用户服务协议》</a></p>
+				<button type="button" id="btn">登录</button>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			var btn = document.querySelector("#btn")
+			btn.onclick = function() {
+				//做网络请求
+				// url http://10.19.248.186:81/info.json
+				//怎么给后端传参数:
+				//   网址?name=karen&pwd=123&count=20&page=2
+		
+				var userid = document.querySelector("#userid").value //abc
+				var password = document.querySelector("#password").value //123
+		
+				//  "userid=abc&&password=123"
+				var str = "userid=" + userid + "&password=" + password
+		
+				var url = "login.json?" + str
+				$.get(url, function(data) {
+					// console.log(data)
+					
+					if(data=="注册成功！"){
+						//若注册成功,在下面显示请登录
+						var p1=document.createElement("p")
+						var login_input=document.querySelector(".login_input")
+						// p1.className="p1_class"
+						p1.innerHTML=data+"请登录"
+						login_input.appendChild(p1)
+					}else if(data=="账号或密码错误！请重新输入"){
+						//账号密码错误,显示账号或密码错误！请重新输入
+						var p1=document.createElement("p")
+						var login_input=document.querySelector(".login_input")
+						p1.innerHTML=data
+						login_input.appendChild(p1)
+					}else{
+						//登录成功
+						var p1=document.createElement("p")
+						var login_input=document.querySelector(".login_input")
+						p1.innerHTML="登录成功！2秒后跳转到首页……"
+						login_input.appendChild(p1)
+						//设置定时器 登录成功后2秒跳转到首页
+						setTimeout(ftime,2000);
+						function ftime(){
+							window.location.href = "//localhost:666/index"+data[0].user_phone+".html"
+						}
+					}
+				})
+		
+			}
+		</script>
+		
+	</body>
+</html>

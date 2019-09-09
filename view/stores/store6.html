@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="src/css/stores.css" />
+		<script src="http://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="src/js/store6.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../../src/js/mytool.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+	<body>
+		<!-- 顶部导航栏 -->
+		<div class="nav_top">
+			<img src="src/img/index.jpg">
+			<div class="daohang">
+				<ul>
+					<li><a href="../../index.html">首页</a></li>
+					<li><a href="../dingdan/dingdan.html">订单</a></li>
+					<li><a href="my.html">我的</a></li>
+					<!-- <li><a href="../login/login.html">登录/注册</a></li> -->
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var url = "loadFood6";
+			$.get(url, function(data) {
+				loadFood6(data);
+			})
+		</script>
+	</body>
+</html>

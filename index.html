@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="src/css/index.css" />
+		<script src="src/js/mytool.js" type="text/javascript" charset="utf-8"></script>
+		<script src="http://code.jquery.com/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- 顶部导航栏 -->
+		<div class="nav_top">
+			<img src="src/img/index.jpg">
+
+			<div class="daohang">
+				<ul class="daohang_ul">
+					<li><a href="index.html">首页</a></li>
+					<li><a href="view/dingdan/dingdan.html">订单</a></li>
+					<li><a href="view/my/my.html" >我的</a></li>
+					<li><a href="view/login/login.html" >登录/注册</a></li>
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var url = "loadAll";
+		$.get(url, function(data) {
+			loadAll(data);
+		})
+	</script>
+</html>
