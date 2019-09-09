@@ -2,7 +2,8 @@
 
 项目操作流程文档
 1.首先在命令行窗口打开index.js文件所在目录，在命令行窗口输入node index.js
-![image]https://github.com/kkliaoer/eleya/blob/master/%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6/1.png?raw=true
+
+![Image text](https://github.com/kkliaoer/eleya/blob/master/%E6%93%8D%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6/1.png?raw=true)
  
 2.运行成功之后在浏览器输入: http://localhost:666/index.html 进入首页 如图
  
